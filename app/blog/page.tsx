@@ -3,9 +3,9 @@ import BlogCard from "@/components/home/blod-card";
 import { IBlogPostDetail } from "@/lib/types";
 import { getQueryResult } from "@/server/api/blog";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
-const QueryResultPage = () => {
+const SuspenseBlock = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category") as string;
   const sub_category = searchParams.get("sub_category") as string;
@@ -31,7 +31,7 @@ const QueryResultPage = () => {
   }, [category, sub_category, search_query]);
 
   return (
-    <div className="w-screen p-2 ">
+    <div className="w-screen p-4 sm:px-16 sm:pt-8 md:px-32 lg:px-44">
       {category && <h3>Category: {category}</h3>}
       {sub_category && <p>Sub Category: {sub_category}</p>}
       {search_query && <h3>Results for {`"${search_query}"`}</h3>}
@@ -45,6 +45,14 @@ const QueryResultPage = () => {
         <div>No Blogs found</div>
       )}
     </div>
+  );
+};
+
+const QueryResultPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SuspenseBlock />
+    </Suspense>
   );
 };
 
