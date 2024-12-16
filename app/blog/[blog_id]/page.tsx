@@ -1,5 +1,5 @@
 "use client";
-import { example_blog_content, example_blog_details } from "@/lib/example";
+
 import { getTagColor } from "@/lib/services/getTagColor";
 import { IBlogPostDetail } from "@/lib/types";
 import { getBlogPost } from "@/server/api/blog";
@@ -60,11 +60,7 @@ const BlogPage = () => {
         }
       });
     }
-    // Load blog details
-    const blog_details: IBlogPostDetail[] = example_blog_details.filter(
-      (blog) => blog._id! === blog_id
-    );
-    setBlogDetail(blog_details[0]);
+    
   }, [params]);
 
   return (

@@ -1,12 +1,11 @@
 "use client";
-import { getQueryResult } from "@/server/api/blog";
+// import { getQueryResult } from "@/server/api/blog";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
   const [search, setSearch] = React.useState("");
-  const [searching, setSearching] = React.useState(false);
   const router = useRouter();
 
   const handleSearch = () => {
@@ -26,21 +25,13 @@ const Navbar = () => {
       </Link>
 
       <span className="flex items-center gap-2">
-        {!searching && (
-          <input
-            type="text"
-            className="input"
-            placeholder="Search..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        )}
-
-        {searching && (
-          <p>
-            Searching for <span className="font-semibold">{search}</span>...
-          </p>
-        )}
+        <input
+          type="text"
+          className="input"
+          placeholder="Search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
         <img
           src="/images/search.svg"

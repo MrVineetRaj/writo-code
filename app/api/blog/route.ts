@@ -4,7 +4,7 @@ import BlogContent from "@/server/models/blog-content";
 import BlogDetail from "@/server/models/blog-detail";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const { title, subtitle, tag, content, category, sub_category, thumbnail } =
     await req.json();
 
@@ -45,15 +45,17 @@ export async function POST(req: Request, res: Response) {
       },
       status: 201,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    console.error(error);
     return NextResponse.json({
-      error: error.message,
+      error:
+        error instanceof Error ? error.message : "An unknown error occurred",
       status: 500,
     });
   }
 }
 
-export async function GET(req: Request, res: Response) {
+export async function GET(req: Request) {
   try {
     await connectToDatabase();
     console.log("Connected to database");
@@ -62,9 +64,11 @@ export async function GET(req: Request, res: Response) {
       blogs,
       status: 200,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    console.error(error);
     return NextResponse.json({
-      error: error.message,
+      error:
+        error instanceof Error ? error.message : "An unknown error occurred",
       status: 500,
     });
   }

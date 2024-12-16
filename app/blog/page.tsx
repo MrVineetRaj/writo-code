@@ -2,7 +2,7 @@
 import BlogCard from "@/components/home/blod-card";
 import { IBlogPostDetail } from "@/lib/types";
 import { getQueryResult } from "@/server/api/blog";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const QueryResultPage = () => {

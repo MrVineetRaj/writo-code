@@ -3,7 +3,7 @@ import BlogInput from "@/components/shared/input";
 import NewBlogPreView from "@/components/shared/preview";
 import { getBlogPost } from "@/server/api/blog";
 import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const BlogUpdatePage = () => {
   const params = useParams();

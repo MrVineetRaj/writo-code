@@ -1,8 +1,8 @@
 "use client";
 import { getTagColor } from "@/lib/services/getTagColor";
-import { IBlogPostDetail } from "@/lib/types";
+// import { IBlogPostDetail } from "@/lib/types";
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 
 const NewBlogPreView = ({
@@ -22,9 +22,7 @@ const NewBlogPreView = ({
   sub_category?: string;
   thumbnail?: string;
 }) => {
-  useEffect(() => {
-    // Load most read articles
-  }, []);
+
   return (
     <div className="">
       <h2 className="text-center my-4">Preview</h2>

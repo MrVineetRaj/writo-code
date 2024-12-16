@@ -102,7 +102,7 @@ const BlogInput = ({
             className="input w-full"
             placeholder="Tag"
             onChange={(e) => {
-              let tags: string[] = e.target.value.split(",");
+              const tags: string[] = e.target.value.split(",");
               tags.map((tag) => tag.trim());
 
               setTag(tags);
