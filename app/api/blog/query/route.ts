@@ -7,21 +7,6 @@ export async function GET(req: Request) {
   const sub_category = query.get("sub_category") || "";
   const search_query = query.get("search_query") || "";
 
-  let message: {
-    [key: string]: string;
-  } = {};
-
-  if (category != "") {
-    message["category"] = category;
-  }
-  if (sub_category) {
-    message["sub_category"] = sub_category;
-  }
-  if (search_query) {
-    message["search_query"] = search_query;
-  }
-
-  console.log(message);
 
   let blogs;
 
