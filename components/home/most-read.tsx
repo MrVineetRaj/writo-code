@@ -1,5 +1,5 @@
 "use client";
-import { example_blog_details } from "@/lib/example";
+
 import { IBlogPostDetail } from "@/lib/types";
 import React, { useEffect, useState } from "react";
 import BlogCard from "./blod-card";

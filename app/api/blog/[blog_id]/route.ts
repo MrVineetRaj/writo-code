@@ -5,7 +5,6 @@ import BlogDetail from "@/server/models/blog-detail";
 import { NextResponse } from "next/server";
 
 export async function GET(
-  req: Request,
   { params }: { params: { blog_id: string } }
 ) {
   const { blog_id } = params;
