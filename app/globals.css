@@ -2,26 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply m-0 p-0 bg-[#000a1c] flex flex-col items-center text-white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 {
+  @apply text-3xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
+}
+
+h3 {
+  @apply text-lg font-bold;
+}
+
+.input {
+  @apply bg-transparent border rounded-md px-2 py-1 border-gray-200 placeholder:text-gray-100 bg-black;
+}
+
+.animate-smooth {
+  @apply transition-all duration-150 ease-in-out;
+}
+.btn {
+  @apply px-4 py-2  rounded-md active:scale-90 animate-smooth font-semibold inline-block text-center;
+}
+
+.markdown-content {
+  min-width: 300px;
+  @apply text-justify flex flex-col items-center;
+}
+
+/* Custom styles for markdown content */
+.markdown-content h1 {
+  @apply sm:text-3xl text-2xl font-bold my-4 w-full;
+}
+
+.markdown-content h2 {
+  @apply sm:text-2xl text-xl font-semibold my-3  w-full;
+}
+
+.markdown-content h3 {
+  @apply sm:text-xl text-lg font-semibold my-2  w-full;
+}
+
+.markdown-content p {
+  @apply text-sm sm:text-base leading-relaxed my-2  w-full;
+}
+
+.markdown-content ul {
+  @apply list-disc list-inside my-2  w-full;
+}
+
+.markdown-content ol {
+  @apply list-decimal list-inside my-2  w-full; 
+}
+
+.markdown-content li {
+  @apply text-sm sm:text-base my-1  w-full;
+}
+.markdown-content code {
+  @apply p-1 text-gray-100 bg-gray-800 rounded text-xs sm:text-sm font-mono;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4  border-gray-300 pl-4 italic my-4 text-gray-600;
+}
+
+.markdown-content pre {
+  @apply bg-gray-800  p-4 rounded my-4 overflow-x-scroll;
+}
+
+.markdown-content hr {
+  @apply my-8;
 }
