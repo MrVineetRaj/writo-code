@@ -34,7 +34,7 @@ const BlogUpdatePage = () => {
 
   return (
     <main className="w-screen p-4 sm:px-16 sm:pt-8 md:px-32 lg:px-44">
-      <h3 className="text-center">Updating Blog {blog_id}</h3>
+      {title && <h3 className="text-center">Updating Blog <span className="text-blue-500"> {title}</span></h3>}
       <BlogInput
         blog_id={blog_id}
         title={title}

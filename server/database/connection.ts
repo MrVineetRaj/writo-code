@@ -10,7 +10,7 @@ const connectToDatabase = async (): Promise<mongoose.Connection> => {
   }
 
   const db = await mongoose.connect(process.env.DB_CONN_URL!, {
-    dbName: process.env.DB_NAME,
+    dbName: "WritoCode",
     connectTimeoutMS: 30 * 1000,
   });
 
