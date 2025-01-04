@@ -34,7 +34,6 @@ const GenerateBlogPage = () => {
       <NewBlogPreView
         title={title}
         subtitle={subtitle}
-        blogContent={content}
         tag={tag}
         category={category}
         sub_category={sub_category}

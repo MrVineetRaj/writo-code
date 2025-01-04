@@ -3,12 +3,9 @@ import { getTagColor } from "@/lib/services/getTagColor";
 // import { IBlogPostDetail } from "@/lib/types";
 import clsx from "clsx";
 import React from "react";
-import ReactMarkdown from "react-markdown";
-
 const NewBlogPreView = ({
   title = "",
   subtitle = "",
-  blogContent = "",
   tag = [""],
   category = "",
   sub_category = "",
@@ -16,13 +13,11 @@ const NewBlogPreView = ({
 }: {
   title?: string;
   subtitle?: string;
-  blogContent?: string;
   tag?: string[];
   category?: string;
   sub_category?: string;
   thumbnail?: string;
 }) => {
-
   return (
     <div className="">
       <h2 className="text-center my-4">Preview</h2>
@@ -37,7 +32,7 @@ const NewBlogPreView = ({
           {tag && (
             <span className="flex flex-wrap gap-2">
               {tag?.map((tag, index) => {
-                console.log(getTagColor(tag));
+                // console.log(getTagColor(tag));
                 return (
                   <span
                     key={index}

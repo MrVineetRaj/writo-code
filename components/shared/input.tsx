@@ -51,7 +51,7 @@ const BlogInput = ({
       sub_category,
       thumbnail,
     }).then((res) => {
-      console.log(res);
+      // console.log(res);
       if (res.status === 201) {
         router.push(`/blog/${res.blog.detail._id}`);
       }
@@ -68,9 +68,9 @@ const BlogInput = ({
       sub_category,
       thumbnail,
     }).then((res) => {
-      console.log(res);
+      // console.log(res);
       if (res.status === 200) {
-        console.log(res.blog.detail._id);
+        // console.log(res.blog.detail._id);
         router.push(`/blog/${res.blog.detail._id}`);
       }
     });
@@ -151,7 +151,6 @@ const BlogInput = ({
         <NewBlogPreView
           title={title}
           subtitle={subtitle}
-          blogContent={content}
           tag={tag}
           category={category}
           sub_category={sub_category}
@@ -178,11 +177,11 @@ const BlogInput = ({
         <button
           className="btn bg-blue-700"
           onClick={() => {
-            console.log(pathName);
+            // console.log(pathName);
             if (pathName.includes("update")) {
               handleUpdateBlog();
             } else if (pathName.includes("generate-blog")) {
-              console.log("Generating Blog");
+              // console.log("Generating Blog");
               handleGenerateBlog();
             }
             // handleGenerateBlog();

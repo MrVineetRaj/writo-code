@@ -23,7 +23,7 @@ const BlogCard = ({ blog }: { blog: IBlogPostDetail }) => {
         {blog.tag && (
           <span className="flex flex-wrap gap-2">
             {blog.tag?.map((tag, index) => {
-              console.log(getTagColor(tag));
+              // console.log(getTagColor(tag));
               return (
                 <span
                   key={index}

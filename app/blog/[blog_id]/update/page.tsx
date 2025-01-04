@@ -1,6 +1,5 @@
 "use client";
 import BlogInput from "@/components/shared/input";
-import NewBlogPreView from "@/components/shared/preview";
 import { getBlogPost } from "@/server/api/blog";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
@@ -21,7 +20,7 @@ const BlogUpdatePage = () => {
     setBlogId(blog_id);
     // Load blog details
     getBlogPost(blog_id).then((res) => {
-      console.log(res);
+      // console.log(res);
       setTitle(res.blog.blog.title);
       setContent(res.blog.content);
       setTag(res.blog.blog.tag);

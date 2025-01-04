@@ -10,7 +10,7 @@ const MostRead = () => {
   useEffect(() => {
     // Load most read articles
     getBlogPosts().then((res) => {
-      console.log(res);
+      // console.log(res);
       setBlogs(res?.blogs);
     });
 

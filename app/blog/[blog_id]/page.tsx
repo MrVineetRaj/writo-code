@@ -4,12 +4,10 @@ import BlockNoteContainer from "@/components/shared/BlockNoteContainer";
 import { getTagColor } from "@/lib/services/getTagColor";
 import { IBlogPostDetail } from "@/lib/types";
 import { getBlogPost } from "@/server/api/blog";
-import { BlockNoteView } from "@blocknote/mantine";
 import clsx from "clsx";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
 
 const BlogPage = () => {
   const params = useParams();
@@ -24,7 +22,7 @@ const BlogPage = () => {
     // Load blog content
     if (blog_id) {
       getBlogPost(blog_id).then((res) => {
-        console.log(res);
+        
         if (res.status === 200) {
           // setBlogDetail(res.blog.blog);
           const {
@@ -76,7 +74,7 @@ const BlogPage = () => {
           {blogDetail?.tag && (
             <span className="flex flex-wrap gap-2">
               {blogDetail?.tag?.map((tag, index) => {
-                console.log(getTagColor(tag));
+                
                 return (
                   <span
                     key={index}

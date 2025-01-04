@@ -49,7 +49,7 @@ export const getQueryResult = async ({
   sub_category?: string;
   search_query?: string;
 }) => {
-  console.log("Here ! == >", category, sub_category, search_query);
+  // console.log("Here ! == >", category, sub_category, search_query);
   const response = await axios.get(
     `/api/blog/query?category=${category || ""}&sub_category=${
       sub_category || ""

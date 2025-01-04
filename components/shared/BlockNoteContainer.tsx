@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import "@blocknote/core/fonts/inter.css";
 import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
@@ -27,7 +27,7 @@ export default function BlockNoteContainer({
 
   const handlePrintContent = () => {
     const content = editor.document;
-    console.log(content);
+    // console.log(content);
     setContent(JSON.stringify(content));
     // You can process the content as needed, e.g., convert to JSON or HTML
   };
