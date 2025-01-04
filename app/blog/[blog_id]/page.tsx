@@ -1,8 +1,10 @@
 "use client";
 
+import BlockNoteContainer from "@/components/shared/BlockNoteContainer";
 import { getTagColor } from "@/lib/services/getTagColor";
 import { IBlogPostDetail } from "@/lib/types";
 import { getBlogPost } from "@/server/api/blog";
+import { BlockNoteView } from "@blocknote/mantine";
 import clsx from "clsx";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -60,7 +62,6 @@ const BlogPage = () => {
         }
       });
     }
-    
   }, [params]);
 
   return (
@@ -106,9 +107,13 @@ const BlogPage = () => {
       >
         Update
       </Link>
-      <ReactMarkdown className="markdown-content ">
-        {blogContent || ""}
-      </ReactMarkdown>
+      {blogContent && (
+        <BlockNoteContainer
+          initialContent={blogContent}
+          setContent={() => {}}
+          editable={false}
+        />
+      )}
       <p className="fixed size-10 bottom-2 right-2 bg-black font-semibold flex items-center justify-center rounded-full border">
         {blogDetail?.views}
       </p>

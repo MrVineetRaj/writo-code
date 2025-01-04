@@ -52,15 +52,6 @@ const BlogUpdatePage = () => {
         thumbnail={thumbnail}
         setThumbnail={setThumbnail}
       />
-      <NewBlogPreView
-        title={title}
-        subtitle={subtitle}
-        blogContent={content}
-        tag={tag}
-        category={category}
-        sub_category={sub_category}
-        thumbnail={thumbnail}
-      />
     </main>
   );
 };

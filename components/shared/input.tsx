@@ -2,6 +2,8 @@
 
 import { createBlogPost, updateBlogPost } from "@/server/api/blog";
 import { usePathname, useRouter } from "next/navigation";
+import BlockNoteContainer from "./BlockNoteContainer";
+import NewBlogPreView from "./preview";
 
 const BlogInput = ({
   blog_id,
@@ -49,7 +51,7 @@ const BlogInput = ({
       sub_category,
       thumbnail,
     }).then((res) => {
-      console.log(res);  
+      console.log(res);
       if (res.status === 201) {
         router.push(`/blog/${res.blog.detail._id}`);
       }
@@ -137,15 +139,42 @@ const BlogInput = ({
           />
         </span>
 
-        <textarea
+        {/* <textarea
           className="input w-full min-h-96"
           placeholder="Content"
           value={content}
           onChange={(e) => {
             setContent(e.target.value);
           }}
-        ></textarea>
+        ></textarea> */}
 
+        <NewBlogPreView
+          title={title}
+          subtitle={subtitle}
+          blogContent={content}
+          tag={tag}
+          category={category}
+          sub_category={sub_category}
+          thumbnail={thumbnail}
+        />
+
+        {pathName.includes("update") ? (
+          content ? (
+            <BlockNoteContainer
+              initialContent={content}
+              setContent={setContent}
+              editable={true}
+            />
+          ) : (
+            <p>Loading</p>
+          )
+        ) : (
+          <BlockNoteContainer
+            initialContent={content}
+            setContent={setContent}
+            editable={true}
+          />
+        )}
         <button
           className="btn bg-blue-700"
           onClick={() => {

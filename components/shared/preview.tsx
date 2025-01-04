@@ -63,11 +63,6 @@ const NewBlogPreView = ({
         {sub_category && <p>{sub_category}</p>}
       </span>
       {/* <button className="bg-gray-800 my-1 btn w-full">Update</button> */}
-      {blogContent && (
-        <ReactMarkdown className="markdown-content ">
-          {blogContent || ""}
-        </ReactMarkdown>
-      )}
     </div>
   );
 };
