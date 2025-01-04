@@ -2,8 +2,16 @@
 
 import { createBlogPost, updateBlogPost } from "@/server/api/blog";
 import { usePathname, useRouter } from "next/navigation";
-import BlockNoteContainer from "./BlockNoteContainer";
+
 import NewBlogPreView from "./preview";
+import dynamic from "next/dynamic";
+
+const BlockNoteContainer = dynamic(
+  () => import("@/components/shared/BlockNoteContainer"),
+  {
+    ssr: false,
+  }
+);
 
 const BlogInput = ({
   blog_id,

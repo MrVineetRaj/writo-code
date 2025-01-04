@@ -1,13 +1,17 @@
 "use client";
 
-import BlockNoteContainer from "@/components/shared/BlockNoteContainer";
 import { getTagColor } from "@/lib/services/getTagColor";
 import { IBlogPostDetail } from "@/lib/types";
 import { getBlogPost } from "@/server/api/blog";
 import clsx from "clsx";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+const BlockNoteContainer = dynamic(() => import("@/components/shared/BlockNoteContainer"), {
+  ssr: false,
+});
+
 
 const BlogPage = () => {
   const params = useParams();
